@@ -21,6 +21,15 @@ fn main() {
     println!("Median Index: {}", median_index);
     println!("Median is: {}", median);
 
+    // .sum() is part of the iter(), not vec itself!
+    let sum: u32 = nums.iter().sum();
+    println!("Sum is: {}", sum);
+
+    // More on casting and conversions
+    // https://doc.rust-lang.org/rust-by-example/types/cast.html
+    let average = sum as f32 / len as f32;
+    println!("Average is: {}", average);
+
     for num in &nums {
         println!("num: {}", num)
     }
