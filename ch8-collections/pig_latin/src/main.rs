@@ -9,8 +9,13 @@ fn main() {
         let words = line.split_whitespace();
 
         for word in words {
-            let first_letter = word.chars().next().expect("Empty word, oops...");
-            println!("{}", first_letter);
+            let mut chars = word.chars();
+            let first_letter = chars.next().expect("Empty word, oops...");
+            // .collect(), important!
+            let rest: String = chars.collect();
+
+            // TODO check for vowel
+            println!("{}-{}ay", rest, first_letter);
         }
     }
 }
