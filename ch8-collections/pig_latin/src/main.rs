@@ -9,7 +9,7 @@ fn main() {
         let words = line.split_whitespace();
 
         for word in words {
-            let first_letter = word.chars()[0]
+            let first_letter = word.chars().next().expect("Empty word, oops...");
             println!("{}", first_letter);
         }
     }
